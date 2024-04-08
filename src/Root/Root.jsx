@@ -1,8 +1,9 @@
+import Home from "../HomePage/Home/Home";
 
 const Root = () => {
     return (
         <div>
-            <p>I Am Root</p>
+            <Home></Home>
         </div>
     );
 };
