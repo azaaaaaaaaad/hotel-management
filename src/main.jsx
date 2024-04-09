@@ -10,6 +10,8 @@ import Home from './HomePage/Home/Home';
 import Login from './HomePage/Login/Login';
 import Register from './HomePage/Register/Register';
 import AuthProviders from './Providers/AuthProviders';
+import EstateDetails from './HomePage/Estate/EstateDetails';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 
 const router = createBrowserRouter([
@@ -20,7 +22,13 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: ()=> fetch('hotels.json'),
+        loader: () => fetch('/hotels.json'),
+      },
+      {
+        path: '/hotels/:id',
+        element: <PrivateRoute>
+          <EstateDetails></EstateDetails>
+        </PrivateRoute>
       },
       {
         path: '/login',

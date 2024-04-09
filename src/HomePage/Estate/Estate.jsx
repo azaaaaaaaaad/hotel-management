@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Estate = ({ hotel }) => {
     const { estate_title,
@@ -23,7 +24,7 @@ const Estate = ({ hotel }) => {
                     <p>Price: {price}</p>
                     <p>For: {status}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">View Property</button>
+                        <Link to={`/hotels/${id}`}><button className="btn btn-primary">View Property</button></Link>
                     </div>
                 </div>
             </div>
