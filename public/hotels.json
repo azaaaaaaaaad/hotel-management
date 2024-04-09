@@ -1,0 +1,110 @@
+[
+    {
+        "image": "https://i.ibb.co/nbCHgbH/villa-anavaya-samui-seaview.jpg",
+        "estate_title": "Luxury Villa with Ocean View",
+        "id": "001",
+        "segment_name": "Hotels",
+        "description": "Beautiful villa overlooking the ocean, with spacious rooms and modern amenities.",
+        "price": "$2,500,000",
+        "status": "sale",
+        "area": "5000 sq ft",
+        "location": "Malibu, California",
+        "facilities": ["living room", "swimming pool", "kitchen"]
+    },
+    {
+        "image": "https://i.ibb.co/B3ftrB2/photo-reykjavik-4.jpg",
+        "estate_title": "Modern Downtown Apartment",
+        "id": "002",
+        "segment_name": "Motels",
+        "description": "Sleek and stylish apartment located in the heart of the city, offering convenience and luxury.",
+        "price": "$3,000/month",
+        "status": "rent",
+        "area": "1000 sq ft",
+        "location": "New York City, New York",
+        "facilities": ["living room", "gym", "parking"]
+    },
+    {
+        "image": "https://i.ibb.co/xsc6s7h/be.jpg",
+        "estate_title": "Cozy Countryside Cottage",
+        "id": "003",
+        "segment_name": "Resorts",
+        "description": "Charming cottage nestled in the countryside, perfect for a peaceful retreat.",
+        "price": "$350,000",
+        "status": "sale",
+        "area": "1500 sq ft",
+        "location": "Cotswolds, England",
+        "facilities": ["living room", "garden", "fireplace"]
+    },
+    {
+        "image": "https://i.ibb.co/WcStQTL/ce7cfedd-42a5-4f74-a93b-6026116e9895.jpg",
+        "estate_title": "Lakefront Cabin",
+        "id": "004",
+        "segment_name": "Vacation Rentals",
+        "description": "Quaint cabin situated by the lake, ideal for nature lovers and outdoor enthusiasts.",
+        "price": "$200/night",
+        "status": "rent",
+        "area": "800 sq ft",
+        "location": "Lake Tahoe, California",
+        "facilities": ["living room", "dock", "fire pit"]
+    },
+    {
+        "image": "https://i.ibb.co/t2KZYPK/12b95901ddf233877cb312a245ce3ce1.jpg",
+        "estate_title": "Contemporary Penthouse",
+        "id": "005",
+        "segment_name": "Lodges",
+        "description": "Stunning penthouse with panoramic city views and top-of-the-line finishes.",
+        "price": "$5,000,000",
+        "status": "sale",
+        "area": "3000 sq ft",
+        "location": "Dubai, UAE",
+        "facilities": ["living room", "rooftop terrace", "gym", "pool"]
+    },
+    {
+        "image": "https://i.ibb.co/VYkh05w/453053615.jpg",
+        "estate_title": "Mountain View Chalet",
+        "id": "006",
+        "segment_name": "Guesthouses",
+        "description": "Charming chalet nestled in the mountains, offering breathtaking views and cozy interiors.",
+        "price": "$600,000",
+        "status": "sale",
+        "area": "2000 sq ft",
+        "location": "Aspen, Colorado",
+        "facilities": ["living room", "ski storage", "fireplace"]
+    },
+    {
+        "image": "https://i.ibb.co/z4nNJbJ/57-Ocean-Terrace.jpg",
+        "estate_title": "Beachfront Condo",
+        "id": "007",
+        "segment_name": "Hotels",
+        "description": "Luxurious condo located right on the beach, with access to exclusive amenities.",
+        "price": "$1,200,000",
+        "status": "sale",
+        "area": "1800 sq ft",
+        "location": "Miami Beach, Florida",
+        "facilities": ["living room", "beach access", "fitness center"]
+    },
+    {
+        "image": "https://i.ibb.co/v3HsSw3/defcbc4a-b1b4-44ed-9191-a1d1688e2aa7.jpg",
+        "estate_title": "City View Loft",
+        "id": "008",
+        "segment_name": "Motels",
+        "description": "Spacious loft with stunning city views, perfect for modern city living.",
+        "price": "$800,000",
+        "status": "sale",
+        "area": "1500 sq ft",
+        "location": "San Francisco, California",
+        "facilities": ["living room", "balcony", "parking"]
+    },
+    {
+        "image": "https://i.ibb.co/4KHyBPR/imageforentry3312.webp",
+        "estate_title": "Historic Mansion",
+        "id": "009",
+        "segment_name": "Resorts",
+        "description": "Grand mansion with rich history and exquisite architectural details, set amidst lush gardens.",
+        "price": "$10,000,000",
+        "status": "sale",
+        "area": "10000 sq ft",
+        "location": "Paris, France",
+        "facilities": ["living room", "ballroom", "gardens"]
+    }
+]
