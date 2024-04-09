@@ -1,10 +1,11 @@
-import { Outlet } from "react-router-dom";
+import Swipper from "../Swipper/Swipper";
+
 
 
 const Home = () => {
     return (
         <div>
-            <Outlet></Outlet>
+            <Swipper></Swipper>
         </div>
     );
 };
