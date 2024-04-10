@@ -5,7 +5,7 @@ const EstateDetails = () => {
 
     const { id } = useParams();
     const hotels = useLoaderData();
-    const hotel = hotels.find(hotel => hotel.id)
+    const hotel = hotels.find(hotel => hotel.id === id)
 
 
     // {
