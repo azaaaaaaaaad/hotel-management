@@ -19,7 +19,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    errorElement: <Error></Error> ,
+    errorElement: <Error></Error>,
     children: [
       {
         path: '/',
@@ -30,7 +30,8 @@ const router = createBrowserRouter([
         path: '/hotels/:id',
         element: <PrivateRoute>
           <EstateDetails></EstateDetails>
-        </PrivateRoute>
+        </PrivateRoute>,
+        loader: () => fetch(`../hotels.json`)
       },
       {
         path: '/login',
