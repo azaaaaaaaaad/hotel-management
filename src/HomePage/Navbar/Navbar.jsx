@@ -1,15 +1,24 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import userDefaultPicture from '../../assets/user.png'
+import { AuthContext } from "../../Providers/AuthProviders";
 
 
 const Navbar = () => {
 
+    const { user, logOut } = useContext(AuthContext)
+    const handleSignOut = () => {
+        logOut()
+        .then()
+        .catch()
+    }
+
     const links = <>
-        <li><NavLink to={'/'}>Home</NavLink></li>
-        <li><NavLink to={'/about'}>About</NavLink></li>
-        <li><NavLink to={'/career'}>Career</NavLink></li>
+        <li> <NavLink to={'/'} className={({ isActive }) => isActive ? 'font-bold underline' : 'font-bold'}>Home</NavLink></li>
+        <li><NavLink to={'/updateProfile'} className={({ isActive }) => isActive ? 'font-bold underline' : 'font-bold'}>Update Profile</NavLink></li>
+        <li><NavLink to={'/userProfile'} className={({ isActive }) => isActive ? 'font-bold underline' : 'font-bold'}>User Profile</NavLink></li>
 
     </>
+
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -21,24 +30,26 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <Link to={'/'} className="btn btn-ghost text-xl text-primary">Hotel-Lelo</Link>
+                <Link to={'/'} className="btn btn-ghost text-xl">Hotel-Lelo</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end">
-                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                    <div className="w-10 rounded-full">
-                        <img alt="Tailwind CSS Navbar component" src={userDefaultPicture} />
+            {
+                user ?
+                    <div className="navbar-end">
+                        <button onClick={handleSignOut} className="btn">Sign Out</button>
                     </div>
-                </div>
-                <Link to={'/login'}>
-                    <button className="btn">Login</button>
-                </Link>
+                    :
+                    <div className="navbar-end">
+                        <Link to={'/login'}>
+                            <button className="btn">Login</button>
+                        </Link>
+                    </div>
 
-            </div>
+            }
         </div>
     );
 };

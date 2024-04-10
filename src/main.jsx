@@ -12,12 +12,14 @@ import Register from './HomePage/Register/Register';
 import AuthProviders from './Providers/AuthProviders';
 import EstateDetails from './HomePage/Estate/EstateDetails';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import Error from './Error/Error';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <Error></Error> ,
     children: [
       {
         path: '/',
