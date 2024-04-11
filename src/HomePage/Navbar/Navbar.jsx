@@ -38,7 +38,7 @@ const Navbar = () => {
                 </ul>
             </div>
             {
-                user ?.email ?
+                user ?
                     <div className="navbar-end gap-2">
                         <div className="w-10 rounded-full">
                             <img alt="Tailwind CSS Navbar component" src={userImage} />

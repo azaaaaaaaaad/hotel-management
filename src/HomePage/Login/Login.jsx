@@ -14,14 +14,21 @@ const Login = () => {
         formState: { errors },
     } = useForm()
 
+    const navigate = useNavigate();
+    const location = useLocation()
+    const from = location?.state || '/'
+    
+
     const onSubmit = (data) => {
         const { email, password } = data;
 
 
         signInUser(email, password)
-            .then(result => {
-                console.log(result.user);
-            })
+        .then(result=>{
+            if (result.user) {
+                navigate(from)
+            }
+        })
             .catch(error => {
                 console.error(error);
             })

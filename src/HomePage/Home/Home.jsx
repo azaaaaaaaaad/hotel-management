@@ -1,8 +1,6 @@
-
 import { useLoaderData } from "react-router-dom";
 import Swipper from "../Swipper/Swipper";
 import Estate from "../Estate/Estate";
-import EstateDetails from "../Estate/EstateDetails";
 
 
 
@@ -22,15 +20,6 @@ const Home = () => {
                     )
                 }
             </div>
-            {/* <div>
-                {
-                    hotels.map(hotel=>
-                    <EstateDetails
-                    key={hotel.id}
-                    hotel={hotel}
-                    ></EstateDetails>)
-                }
-            </div> */}
         </div>
     );
 };
