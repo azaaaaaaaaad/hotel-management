@@ -41,7 +41,7 @@ const Navbar = () => {
                 user ?
                     <div className="navbar-end gap-2">
                         <div className="w-10 rounded-full">
-                            <img alt="Tailwind CSS Navbar component" src={userImage} />
+                            <img alt="user image" src={user?.photoURL || userImage} />
                         </div>
                         <button onClick={logOut} className="btn">Sign Out</button>
                     </div>
