@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Swipper from "../Swipper/Swipper";
 import Estate from "../Estate/Estate";
+import 'animate.css';
 
 
 
