@@ -30,7 +30,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <Link to={'/'} className="btn btn-ghost text-xl">Hotel-Lelo</Link>
+                <Link to={'/'} className="btn btn-ghost text-2xl font-semibold">Hotel-Lelo</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

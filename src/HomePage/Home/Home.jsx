@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Swipper from "../Swipper/Swipper";
 import Estate from "../Estate/Estate";
-import 'animate.css';
+import Footer from "../Footer/Footer";
 
 
 
@@ -21,6 +21,7 @@ const Home = () => {
                     )
                 }
             </div>
+            <Footer></Footer>
         </div>
     );
 };
