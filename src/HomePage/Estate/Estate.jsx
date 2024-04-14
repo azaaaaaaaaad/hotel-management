@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Marquee from "react-fast-marquee";
 
 const Estate = ({ hotel }) => {
     const { estate_title,
@@ -21,7 +22,7 @@ const Estate = ({ hotel }) => {
                     <h2 className="card-title">{estate_title}</h2>
                     <p>{description}</p>
                     <p className="font-bold">{segment_name}</p>
-                    <p>Price: {price}</p>
+                    <Marquee><p>Price: {price}</p></Marquee>
                     <p>For: {status}</p>
                     <div className="card-actions justify-end">
                         <Link to={`/hotels/${id}`}><button className="btn btn-primary">View Property</button></Link>
