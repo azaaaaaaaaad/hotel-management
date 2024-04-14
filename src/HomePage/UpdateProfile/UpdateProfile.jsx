@@ -45,7 +45,7 @@ const UpdateProfile = () => {
                         name="fullName"
                         placeholder="Full Name"
                         className="input input-bordered"
-                        {...register("fullName", { required: true })}
+                        {...register("fullName")}
                     />
                 </div>
                 <div className="form-control">

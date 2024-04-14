@@ -1,5 +1,6 @@
 import { useParams, useLoaderData } from "react-router-dom";
-
+import Marquee from "react-fast-marquee";
+import { GrLocation } from "react-icons/gr";
 
 const EstateDetails = () => {
 
@@ -22,14 +23,26 @@ const EstateDetails = () => {
     // },
 
     return (
-        <div className="card card-side bg-base-100 shadow-xl">
+        <div className="card md:card-side lg:card-side bg-base-100 shadow-xl">
             <figure><img src={hotel.image} alt="Movie" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{hotel.estate_title}</h2>
-                <p>{hotel.description}</p>
-                <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Watch</button>
+                <div className="mt-2">
+                    <p>{hotel.description}</p>
+                    <hr className="mt-2 mb-2"/>
+                    <Marquee><p>Price: {hotel.price}</p>
+                    </Marquee>
+                    <p>For: {hotel.status}</p>
+                    <hr className="mt-2 mb-2"/>
+                    <p>Area: {hotel.area}</p>
+                    <p className="flex items-center gap-1"><GrLocation></GrLocation>{hotel.location}</p>
+                    <hr className="mt-2 mb-2"/>
+                    <p>Facilities</p>
+                    <li>{hotel.facilities[0]}</li>
+                    <li>{hotel.facilities[1]}</li>
+                    <li>{hotel.facilities[2]}</li>
                 </div>
+                
             </div>
         </div>
     );
