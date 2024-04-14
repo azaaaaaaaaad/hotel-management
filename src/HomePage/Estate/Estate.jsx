@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import 'animate.css';
 
 const Estate = ({ hotel }) => {
     const { estate_title,
@@ -16,7 +15,7 @@ const Estate = ({ hotel }) => {
     } = hotel;
     return (
         <div>
-            <div className="card w-96 bg-base-100 shadow-xl animate__animated animate__bounce animate__delay-1s">
+            <div className="card w-96 bg-base-100 shadow-xl">
                 <figure><img src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{estate_title}</h2>

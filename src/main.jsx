@@ -13,6 +13,8 @@ import AuthProviders from './Providers/AuthProviders';
 import EstateDetails from './HomePage/Estate/EstateDetails';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Error from './Error/Error';
+import UpdateProfile from './HomePage/UpdateProfile/UpdateProfile';
+import UserProfile from './HomePage/UserProfile/UserProfile';
 
 
 const router = createBrowserRouter([
@@ -29,17 +31,27 @@ const router = createBrowserRouter([
       {
         path: '/hotels/:id',
         element: <PrivateRoute>
-          <EstateDetails></EstateDetails>
+          <EstateDetails></EstateDetails>,
         </PrivateRoute>,
         loader: () => fetch(`../hotels.json`)
       },
       {
         path: '/login',
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
         path: '/register',
-        element: <Register></Register>
+        element: <Register></Register>,
+      },
+      {
+        path: '/updateProfile',
+        element: <UpdateProfile></UpdateProfile>,
+      },
+      {
+        path: '/userProfile',
+        element: <PrivateRoute>
+          <UserProfile></UserProfile>
+        </PrivateRoute>,
       },
     ]
   },

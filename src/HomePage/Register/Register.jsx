@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth";
 import { useNavigate } from 'react-router-dom'
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 
@@ -9,10 +11,11 @@ import { useNavigate } from 'react-router-dom'
 const Register = () => {
 
     const { createUser, updateUserProfile } = useAuth();
+    const [showPassword, setShowPassword] = useState(false)
 
     //navigate
     const navigate = useNavigate();
-    const from =  '/'
+    const from = '/'
 
     const {
         register,
@@ -62,15 +65,35 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Photo URL</span>
                             </label>
-                            <input type="text" placeholder="photo url" className="input input-bordered" {...register("image")} />
+                            <div className=" relative">
+                                <input type={showPassword ? "text" : "password"} name="password" placeholder="Password" className="w-full input input-bordered"
+                                    {...register("password", {
+                                        required: true,
+                                        minLength: 6,
+                                        pattern: {
+                                            value: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/,
+
+                                        },
+                                    })}
+                                />
+                                {errors.password && <span>Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long</span>}
+
+                                <span className="absolute top-4 right-2" onClick={() => setShowPassword(!showPassword)}>
+                                    {
+                                        showPassword ? <FaEyeSlash /> : <FaEye />
+                                    }
+                                </span>
+
+                            </div>
+
+                            {/* <input type="text" placeholder="photo url" className="input input-bordered" {...register("image")} /> */}
                             {errors.image && <span>This field is required</span>}
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" placeholder="password" className="input input-bordered" {...register("password", { required: true })} />
-                            {errors.password && <span>This field is required</span>}
+                            <div></div>
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
