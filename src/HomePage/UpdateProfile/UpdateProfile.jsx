@@ -58,7 +58,7 @@ const UpdateProfile = () => {
                         name="fullName"
                         placeholder="Full Name"
                         className="input input-bordered"
-                        {...register("fullName")}
+                        {...register("fullName",{required: true})}
                     />
                 </div>
                 <div className="form-control">
@@ -70,7 +70,7 @@ const UpdateProfile = () => {
                         name="image"
                         placeholder="Image URL"
                         className="input input-bordered"
-                        {...register("image")}
+                        {...register("image",{required: true})}
                     />
                 </div>
                 <div className="form-control mt-6">

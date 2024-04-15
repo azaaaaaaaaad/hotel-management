@@ -2,22 +2,14 @@ import { Link, NavLink } from "react-router-dom";
 import userImage from '../../assets/userImage.png'
 import useAuth from "../../Hooks/useAuth";
 
-
 const Navbar = () => {
 
     const { user, logOut } = useAuth()
-    // const handleSignOut = () => {
-    //     logOut()
-    //         .then()
-    //         .catch()
-    // }
-
     const links = <>
         <li> <NavLink to={'/'} className={({ isActive }) => isActive ? 'font-bold underline' : 'font-bold'}>Home</NavLink></li>
         <li><NavLink to={'/updateProfile'} className={({ isActive }) => isActive ? 'font-bold underline' : 'font-bold'}>Update Profile</NavLink></li>
         <li><NavLink to={'/userProfile'} className={({ isActive }) => isActive ? 'font-bold underline' : 'font-bold'}>User Profile</NavLink></li>
         <li><NavLink to={'/clients'} className={({ isActive }) => isActive ? 'font-bold underline' : 'font-bold'}>Clients</NavLink></li>
-
 
     </>
 
@@ -42,9 +34,8 @@ const Navbar = () => {
             {
                 user ?
                     <div className="navbar-end gap-2">
-                        <div className="w-10 rounded-full ">
+                        <div className="w-10 rounded-full tooltip tooltip-left" data-tip={user.displayName}>
                             <img alt="user image" src={user?.photoURL || userImage} />
-
                         </div>
                         <button onClick={logOut} className="btn">Sign Out</button>
                     </div>
