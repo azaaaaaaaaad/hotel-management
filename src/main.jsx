@@ -15,6 +15,7 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Error from './Error/Error';
 import UpdateProfile from './HomePage/UpdateProfile/UpdateProfile';
 import UserProfile from './HomePage/UserProfile/UserProfile';
+import Clients from './HomePage/Clients/Clients';
 
 
 const router = createBrowserRouter([
@@ -45,7 +46,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/updateProfile',
-        element: <UpdateProfile></UpdateProfile>,
+        element: <PrivateRoute>
+          <UpdateProfile></UpdateProfile>
+        </PrivateRoute>,
       },
       {
         path: '/userProfile',
@@ -53,6 +56,12 @@ const router = createBrowserRouter([
           <UserProfile></UserProfile>
         </PrivateRoute>,
       },
+      {
+        path: '/clients',
+        element: <PrivateRoute>
+          <Clients></Clients>
+        </PrivateRoute>,
+      }
     ]
   },
 ]);

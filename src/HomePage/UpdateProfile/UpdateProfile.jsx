@@ -4,14 +4,14 @@ import useAuth from "../../Hooks/useAuth";
 import { useForm } from "react-hook-form";
 
 const UpdateProfile = () => {
-    const { currentUser, updateUserProfile } = useAuth();
+    const { user,  currentUser, updateUserProfile, setLoading } = useAuth();
     const navigate = useNavigate();
 
     const { register, handleSubmit, setValue } = useForm();
-    const form ="/";
+    const form = "/updateProfile";
 
     useEffect(() => {
-        
+
         if (currentUser) {
             setValue("fullName", currentUser.displayName);
             setValue("image", currentUser.photoURL);
@@ -20,11 +20,11 @@ const UpdateProfile = () => {
 
     const onSubmit = (data) => {
         const { fullName, image } = data;
-        
-        
+
+
         updateUserProfile(fullName, image)
             .then(() => {
-               
+                setLoading(true)
                 navigate(form);
             })
             .catch(error => {
@@ -35,6 +35,19 @@ const UpdateProfile = () => {
     return (
         <div>
             <h2 className="text-2xl my-10 text-center">Edit Profile</h2>
+
+
+
+            <div className="md:w-3/4 lg:w-1/2 mx-auto dark:bg-gray-50 dark:text-gray-800">
+                <img src={user?.photoURL } alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
+                <div className="flex flex-col justify-between p-6 space-y-8">
+                    <div className="space-y-2">
+                        <h2 className="text-3xl font-semibold tracking-wide">{user?.displayName}</h2>
+                    </div>
+                </div>
+            </div>
+
+
             <form onSubmit={handleSubmit(onSubmit)} className="card-body md:w-3/4 lg:w-1/2 mx-auto">
                 <div className="form-control">
                     <label className="label">

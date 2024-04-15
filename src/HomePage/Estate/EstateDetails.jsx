@@ -1,6 +1,7 @@
 import { useParams, useLoaderData } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import { GrLocation } from "react-icons/gr";
+import Footer from "../Footer/Footer";
 
 const EstateDetails = () => {
 
@@ -23,7 +24,8 @@ const EstateDetails = () => {
     // },
 
     return (
-        <div className="card md:card-side lg:card-side bg-base-100 shadow-xl">
+        <div>
+            <div className="card md:card-side lg:card-side bg-base-100 shadow-xl">
             <figure><img src={hotel.image} alt="Movie" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{hotel.estate_title}</h2>
@@ -44,6 +46,8 @@ const EstateDetails = () => {
                 </div>
                 
             </div>
+        </div>
+            <Footer></Footer>
         </div>
     );
 };

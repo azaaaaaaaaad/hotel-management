@@ -16,6 +16,8 @@ const Navbar = () => {
         <li> <NavLink to={'/'} className={({ isActive }) => isActive ? 'font-bold underline' : 'font-bold'}>Home</NavLink></li>
         <li><NavLink to={'/updateProfile'} className={({ isActive }) => isActive ? 'font-bold underline' : 'font-bold'}>Update Profile</NavLink></li>
         <li><NavLink to={'/userProfile'} className={({ isActive }) => isActive ? 'font-bold underline' : 'font-bold'}>User Profile</NavLink></li>
+        <li><NavLink to={'/clients'} className={({ isActive }) => isActive ? 'font-bold underline' : 'font-bold'}>Clients</NavLink></li>
+
 
     </>
 
@@ -40,8 +42,9 @@ const Navbar = () => {
             {
                 user ?
                     <div className="navbar-end gap-2">
-                        <div className="w-10 rounded-full">
+                        <div className="w-10 rounded-full ">
                             <img alt="user image" src={user?.photoURL || userImage} />
+
                         </div>
                         <button onClick={logOut} className="btn">Sign Out</button>
                     </div>

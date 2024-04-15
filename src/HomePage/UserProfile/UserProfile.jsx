@@ -1,9 +1,27 @@
-
+import useAuth from "../../Hooks/useAuth";
+import { FaFacebook, FaGithub, FaTwitter, FaYoutube, FaWhatsapp } from "react-icons/fa";
+import Footer from "../Footer/Footer";
 
 const UserProfile = () => {
+    const { user } = useAuth();
     return (
-        <div>
-            UserProfile
+        <div className="text-center">
+            <div className="max-w-xs md:w-3/4 lg:w-1/2 mx-auto dark:bg-gray-50 dark:text-gray-800">
+                <img src={user.photoURL} alt="" className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500" />
+                <div className="flex flex-col justify-between p-6 space-y-8">
+                    <div className="space-y-2">
+                        <h2 className="text-3xl font-semibold tracking-wide">{user?.displayName}</h2>
+                    </div>
+                    <div className="flex text-2xl justify-around">
+                        <FaFacebook></FaFacebook>
+                        <FaGithub></FaGithub>
+                        <FaTwitter></FaTwitter>
+                        <FaYoutube></FaYoutube>
+                        <FaWhatsapp></FaWhatsapp>
+                    </div>
+                </div>
+            </div>
+            <Footer></Footer>
         </div>
     );
 };
