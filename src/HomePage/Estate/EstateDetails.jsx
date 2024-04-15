@@ -2,6 +2,10 @@ import { useParams, useLoaderData } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import { GrLocation } from "react-icons/gr";
 import Footer from "../Footer/Footer";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const EstateDetails = () => {
 
@@ -24,9 +28,9 @@ const EstateDetails = () => {
     // },
 
     return (
-        <div>
+        <div data-aos="zoom-in" data-aos-duration="3000">
             <div className="card md:card-side lg:card-side bg-base-100 shadow-xl">
-            <figure><img src={hotel.image} alt="Movie" /></figure>
+            <figure><img data-aos="flip-left" data-aos-duration="3000" src={hotel.image} alt="Movie" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{hotel.estate_title}</h2>
                 <div className="mt-2">
