@@ -1,8 +1,21 @@
-# React + Vite
+# Adda Hotel
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the README file for the Awesome Website project.
 
-Currently, two official plugins are available:
+## Live Site
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Visit the live site at [https://dimple-firebase-ee4d3.web.app](https://dimple-firebase-ee4d3.web.app)
+
+## Features and Characteristics
+
+- **Responsive Design**: The website is fully responsive, providing a seamless experience across devices.
+- **Interactive Navbar**: The navbar dynamically displays active routes and includes user profile information when logged in.
+- **User Authentication**: Utilizes user authentication to provide personalized features and secure access to user profiles.
+- **Update Profile Feature**: Users can easily update their profiles with the provided "Update Profile" functionality.
+- **React Router**: Utilizes React Router for client-side routing and navigation.
+
+## npm Package Used
+
+- [AOS-Package]
+- [React-Hook-form]
+- [Swiper-slider]
