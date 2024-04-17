@@ -9,8 +9,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
-    const { createUser, updateUserProfile } = useAuth();
+    const { createUser, updateUserProfile, setLoading } = useAuth();
     const [showPassword, setShowPassword] = useState(false);
+    setLoading(true)
     const navigate = useNavigate();
     const from = '/';
 
@@ -38,6 +39,7 @@ const Register = () => {
                 updateUserProfile(fullName, image)
                     .then(() => {
                         navigate(from);
+                        toast.success('user successfully created')
                     });
             });
     };
@@ -101,7 +103,10 @@ const Register = () => {
                     </form>
                 </div>
             </div>
-            <ToastContainer />
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}>
+            </ToastContainer>
         </div>
     );
 };

@@ -2,10 +2,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import SocialLogin from "./SocialLogin";
 import useAuth from "../../Hooks/useAuth";
-import PasswordReset from "../../Modal/PasswordReset";
 import { Helmet } from "react-helmet-async";
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -21,19 +20,19 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation()
     const from = location?.state || '/'
-    
+
 
     const onSubmit = (data) => {
         const { email, password } = data;
 
 
         signInUser(email, password)
-        .then(result=>{
-            if (result.user) {
-                navigate(from)
-                toast.success('login successfull')
-            }
-        })
+            .then(result => {
+                if (result.user) {
+                    navigate(from)
+                    toast.success('Login successful');
+                }
+            })
             .catch(error => {
                 console.error(error);
                 toast.error('Invalid email or password.');
@@ -67,7 +66,7 @@ const Login = () => {
                             <input type="password" placeholder="password" className="input input-bordered"
                                 {...register("password", { required: true })} />
                             {errors.password && <span>This field is required</span>}
-                            <PasswordReset></PasswordReset>
+
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
@@ -78,7 +77,10 @@ const Login = () => {
 
                 </div>
             </div>
-            <ToastContainer></ToastContainer>
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}>
+            </ToastContainer>
         </div>
     );
 };

@@ -1,7 +1,8 @@
 import { createContext, useEffect, useState } from "react";
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from "../Firebase/firebase.config";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
@@ -33,6 +34,7 @@ const AuthProviders = ({ children }) => {
     //user sign in
     const signInUser = (email, password) => {
         setLoading(true)
+        // toast.success('login successful')
         return signInWithEmailAndPassword(auth, email, password)
     }
 
@@ -75,13 +77,17 @@ const AuthProviders = ({ children }) => {
         githubLogin,
         updateUserProfile,
         setLoading,
-        
+
     }
 
     return (
         <AuthContext.Provider value={authInfo}>
             {children}
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}></ToastContainer>
         </AuthContext.Provider>
+
     );
 };
 
