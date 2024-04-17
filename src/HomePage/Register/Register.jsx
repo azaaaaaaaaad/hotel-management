@@ -5,39 +5,42 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
-
-
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
-
     const { createUser, updateUserProfile } = useAuth();
-    const [showPassword, setShowPassword] = useState(false)
-
-    //navigate
+    const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
-    const from = '/'
+    const from = '/';
 
     const {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm()
+        watch
+    } = useForm();
+
+    const password = watch("password");
 
     const onSubmit = (data) => {
         const { email, password, image, fullName } = data;
 
-        //create user and update profile
+        // Verify password criteria
+        if (!/(?=.*[A-Z])/.test(password) || !/(?=.*[a-z])/.test(password) || password.length < 6) {
+            toast.error('Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long');
+            return;
+        }
+
+        // Proceed with user creation and profile update
         createUser(email, password)
             .then(() => {
                 updateUserProfile(fullName, image)
                     .then(() => {
-                        navigate(from)
-                    })
-
-            })
-    }
-
+                        navigate(from);
+                    });
+            });
+    };
 
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -54,8 +57,7 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input type="text" placeholder="full name" className="input input-bordered" required
-                                {...register("fullName", { required: true })} />
+                            <input type="text" placeholder="full name" className="input input-bordered" required {...register("fullName", { required: true })} />
                             {errors.fullName && <span>This field is required</span>}
                         </div>
                         <div className="form-control">
@@ -69,55 +71,37 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Photo URL</span>
                             </label>
-                            <input type="text" name="image" placeholder="image url" className="input input-bordered"
-                                {...register("image")}
-                            />
+                            <input type="text" name="image" placeholder="image url" className="input input-bordered" {...register("image")} />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <div className=" relative">
-                                <input type={showPassword ? "text" : "password"} name="password" placeholder="Password" className="w-full input input-bordered"
+                            <div className="relative">
+                                <input
+                                    type={showPassword ? "text" : "password"}
+                                    name="password"
+                                    placeholder="Password"
+                                    className="w-full input input-bordered"
                                     {...register("password", {
                                         required: true,
                                         minLength: 6,
-                                        pattern: {
-                                            value: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/,
-
-                                        },
                                     })}
                                 />
-                                {errors.password && <span>Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long</span>}
-
                                 <span className="absolute top-4 right-2" onClick={() => setShowPassword(!showPassword)}>
-                                    {
-                                        showPassword ? <FaEyeSlash /> : <FaEye />
-                                    }
+                                    {showPassword ? <FaEyeSlash /> : <FaEye />}
                                 </span>
-
                             </div>
-
-                            {/* <input type="text" placeholder="photo url" className="input input-bordered" {...register("image")} /> */}
-                            {errors.image && <span>This field is required</span>}
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Password</span>
-                            </label>
-                            <div></div>
-                            <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
+                            {errors.password && <span>Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long</span>}
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>
                         </div>
                         <p>Already have an account <Link to={'/login'} className="text-purple-800 font-bold underline">Login</Link></p>
-
                     </form>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };
