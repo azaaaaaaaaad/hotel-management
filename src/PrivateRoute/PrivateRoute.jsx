@@ -8,30 +8,12 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation();
 
     if (loading) {
-        return <span className="loading loading-bars loading-lg"></span>
+        return <span className="loading loading-infinity loading-lg"></span>
     }
-
-    if (!user) {
-        return <Navigate state={location.pathname} to={'/login'}></Navigate>
+    if (user) {
+        return children
     }
-
-    return(
-        <div>
-            {children}
-        </div>
-    );
-
-   
-
-    // const { user, loading } = useContext(AuthContext);
-    // const location = useLocation();
-    // if (loading) {
-    //     return <span className="loading loading-bars loading-lg"></span>
-    // }
-    // if (!user) {
-    //     return children
-    // }
-    // return <Navigate state={location.pathname} to={'/login'}></Navigate>
+    return <Navigate state={location.pathname} to={'/login'}></Navigate>
 };
 
 export default PrivateRoute;

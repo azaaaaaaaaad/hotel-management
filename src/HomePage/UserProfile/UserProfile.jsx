@@ -15,6 +15,7 @@ const UserProfile = () => {
                 <div className="flex flex-col justify-between p-6 space-y-8">
                     <div className="space-y-2">
                         <h2 className="text-3xl font-semibold tracking-wide">{user?.displayName}</h2>
+                        <h2 className="text-xl font-semibold tracking-wide">Email: {user?.email}</h2>
                     </div>
                     <div className="flex text-2xl justify-around">
                         <FaFacebook></FaFacebook>
