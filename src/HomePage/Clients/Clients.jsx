@@ -1,5 +1,6 @@
 import PhotoAlbum from "react-photo-album";
 import Footer from "../Footer/Footer";
+import { Helmet } from "react-helmet-async";
 
 // https://i.ibb.co/K2fLnr2/p1.webp
 // https://i.ibb.co/0Dk3R5X/p2.jpg
@@ -34,6 +35,9 @@ const photos = [
 const Clients = () => {
     return (
         <div>
+            <Helmet>
+                <title>Happy Clients</title>
+            </Helmet>
             <h2 className="text-2xl font-semibold text-center mt-6 mb-6">Happy Clients</h2>
             <PhotoAlbum layout="masonry" photos={photos} />
             <Footer></Footer>

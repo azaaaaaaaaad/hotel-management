@@ -76,7 +76,6 @@ const AuthProviders = ({ children }) => {
         updateUserProfile,
         setLoading,
         
-
     }
 
     return (

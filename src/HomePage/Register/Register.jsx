@@ -4,6 +4,7 @@ import useAuth from "../../Hooks/useAuth";
 import { useNavigate } from 'react-router-dom'
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -40,6 +41,9 @@ const Register = () => {
 
     return (
         <div className="hero min-h-screen bg-base-200">
+            <Helmet>
+                <title>Register</title>
+            </Helmet>
             <div className="hero-content flex-col ">
                 <div className="text-center ">
                     <h1 className="text-5xl font-bold">Register now!</h1>

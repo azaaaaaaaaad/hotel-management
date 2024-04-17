@@ -4,6 +4,7 @@ import { GrLocation } from "react-icons/gr";
 import Footer from "../Footer/Footer";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import { Helmet } from "react-helmet-async";
 // ..
 AOS.init();
 
@@ -16,6 +17,9 @@ const EstateDetails = () => {
 
     return (
         <div data-aos="zoom-in" data-aos-duration="3000">
+            <Helmet>
+                <title>Estate Details of {id}</title>
+            </Helmet>
             <div className="card md:card-side lg:card-side bg-base-100 shadow-xl">
                 <figure><img data-aos="flip-left" data-aos-duration="3000" src={hotel.image} alt="Movie" /></figure>
                 <div className="card-body">
