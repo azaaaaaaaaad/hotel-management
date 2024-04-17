@@ -69,6 +69,14 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Photo URL</span>
                             </label>
+                            <input type="text" name="image" placeholder="image url" className="input input-bordered"
+                                {...register("image")}
+                            />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Password</span>
+                            </label>
                             <div className=" relative">
                                 <input type={showPassword ? "text" : "password"} name="password" placeholder="Password" className="w-full input input-bordered"
                                     {...register("password", {

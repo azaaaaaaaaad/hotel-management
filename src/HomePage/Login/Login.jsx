@@ -4,6 +4,8 @@ import SocialLogin from "./SocialLogin";
 import useAuth from "../../Hooks/useAuth";
 import PasswordReset from "../../Modal/PasswordReset";
 import { Helmet } from "react-helmet-async";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -29,35 +31,15 @@ const Login = () => {
         .then(result=>{
             if (result.user) {
                 navigate(from)
+                toast.success('login successfull')
             }
         })
             .catch(error => {
                 console.error(error);
+                toast.error('Invalid email or password.');
             })
     }
 
-    //     const navigate = useNavigate();
-    //     const location = useLocation();
-
-    //    const handleLogin = e => {
-    //     e.preventDefault();
-    //     console.log(e.currentTarget);
-    //     const form = new FormData(e.currentTarget);
-    //     const email = form.get('email');
-    //     const password = form.get('password');
-    //     console.log(email, password);
-
-    //     signIn(email, password)
-    //     .then(result=>{
-    //         console.log(result.user);
-
-    //         //navigate after login
-    //         navigate(location?.state ? location.state : '/')
-    //     })
-    //     .catch(error=>{
-    //         console.error(error);
-    //     })
-    //    }
 
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -96,6 +78,7 @@ const Login = () => {
 
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
