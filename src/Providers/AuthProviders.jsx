@@ -15,7 +15,7 @@ const AuthProviders = ({ children }) => {
 
     const [user, setUser] = useState(null);
     console.log(user);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     //create user
     const createUser = (email, password) => {
@@ -84,7 +84,7 @@ const AuthProviders = ({ children }) => {
         <AuthContext.Provider value={authInfo}>
             {children}
             <ToastContainer
-                position="top-center"
+                position="top-right"
                 autoClose={5000}></ToastContainer>
         </AuthContext.Provider>
 
