@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import SocialLogin from "./SocialLogin";
 import useAuth from "../../Hooks/useAuth";
@@ -71,7 +71,8 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                         </div>
-                        <p>Do not have an account <Link to={'/register'} className="text-purple-800 font-bold underline">Register</Link></p>
+                        {/* <p>Do not have an account <Link to='/register' className="text-purple-800 font-bold underline">Register</Link></p> */}
+                        <p>Already have an account <NavLink to={'/register'} className="text-purple-800 font-bold underline">Register</NavLink></p>
                     </form>
                     <SocialLogin></SocialLogin>
 

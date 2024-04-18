@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth";
 import { useNavigate } from 'react-router-dom'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
 import { ToastContainer, toast } from 'react-toastify';
@@ -11,7 +11,6 @@ import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
     const { createUser, updateUserProfile, setLoading } = useAuth();
     const [showPassword, setShowPassword] = useState(false);
-    setLoading(true)
     const navigate = useNavigate();
     const from = '/';
 
@@ -22,7 +21,7 @@ const Register = () => {
         watch
     } = useForm();
 
-    const password = watch("password");
+    // const password = watch("password");
 
     const onSubmit = (data) => {
         const { email, password, image, fullName } = data;
@@ -43,6 +42,11 @@ const Register = () => {
                     });
             });
     };
+
+
+    useEffect(()=>{
+        setLoading(true)
+    })
 
     return (
         <div className="hero min-h-screen bg-base-200">
