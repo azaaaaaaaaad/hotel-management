@@ -14,8 +14,7 @@ const githubProvider = new GithubAuthProvider();
 const AuthProviders = ({ children }) => {
 
     const [user, setUser] = useState(null);
-    console.log(user);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     //create user
     const createUser = (email, password) => {
@@ -59,10 +58,10 @@ const AuthProviders = ({ children }) => {
     //observer
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (user) => {
-            if (user) {
+            // if (user) {
                 setUser(user)
                 setLoading(false)
-            }
+            // }
         });
         return () => unSubscribe
     }, [loading])
@@ -85,7 +84,8 @@ const AuthProviders = ({ children }) => {
             {children}
             <ToastContainer
                 position="top-right"
-                autoClose={5000}></ToastContainer>
+                autoClose={5000}>
+            </ToastContainer>
         </AuthContext.Provider>
 
     );

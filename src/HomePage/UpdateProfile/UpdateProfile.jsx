@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
+import Footer from "../Footer/Footer";
 
 const UpdateProfile = () => {
     const { user,  currentUser, updateUserProfile, setLoading } = useAuth();
@@ -81,6 +82,7 @@ const UpdateProfile = () => {
                     <button type="submit" className="btn btn-primary">Save Changes</button>
                 </div>
             </form>
+            <Footer></Footer>
         </div>
     );
 };
