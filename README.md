@@ -1,6 +1,6 @@
 # Adda Hotel
 
-This is the README file for the Awesome Website project.
+This is the README file for the Hospitality Website project.
 
 ## Live Site
 

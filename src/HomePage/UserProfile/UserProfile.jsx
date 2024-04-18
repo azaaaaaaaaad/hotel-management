@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet-async";
 const UserProfile = () => {
     const { user } = useAuth();
     return (
-        <div className="text-center">
+        <div className="text-center mt-6">
             <Helmet>
                 <title>User Profile</title>
             </Helmet>
