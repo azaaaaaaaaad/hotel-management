@@ -10,7 +10,7 @@
 
 - **Reservation Management**: Users can make, modify, and cancel bookings online, reducing manual workload.
   
-- **Room Allocation**: Automated room assignment based on availability and guest preferences.
+- **Room Allocation**: room assignment based on availability.
 
 - **Reporting and Analytics**: Insights into occupancy rates, revenue, and guest preferences for informed decision-making.
 
